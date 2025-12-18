@@ -204,65 +204,13 @@ export function MainComponent({ title }: Props) {
 <div style={{ background: 'linear-gradient(...)' }} />
 ```
 
-### カラー管理の設計方針
+### カラー・スタイル管理
 
-**重要**: すべてのスライドコンポーネントでは、色を直接ハードコードせず、`src/constants/COLORS.ts`から定義された定数を使用してください。
+**重要**: カラーとスタイルに関するすべての規定は **`docs/REGULATION.md`** を参照してください。
 
-#### カラー定数の使用（必須）
-
-```tsx
-// ✅ 良い例: COLORS.tsから定数をインポート
-import { FLOW_COLORS, BLUE_PALETTE } from '@/constants/COLORS';
-
-export function Flow() {
-  const steps = [
-    {
-      gradient: FLOW_COLORS[0], // sky-500
-      // ...
-    },
-    {
-      gradient: FLOW_COLORS[1], // blue-500
-      // ...
-    },
-  ];
-}
-
-// ❌ 悪い例: 色を直接ハードコード
-export function Flow() {
-  const steps = [
-    {
-      gradient: 'from-sky-500 to-sky-500', // 直接指定は禁止
-      // ...
-    },
-  ];
-}
-```
-
-#### カラー定数の構造
-
-`src/constants/COLORS.ts`には以下の定数が定義されています：
-
-- **`BLUE_PALETTE`**: 基本カラーパレット（4段階）
-- **`FLOW_COLORS`**: Flowスライド用（4ステップ）
-- **`TARGET_COLORS`**: Targetスライド用（4項目）
-- **`DELIVERABLES_COLORS`**: Deliverablesスライド用（6項目）
-- **`PRICING_COLORS`**: Pricingスライド用（3プラン）
-- **`FEATURES_COLORS`**: Featuresスライド用（4項目）
-- **`USECASES_COLORS`**: UseCasesスライド用（4項目）
-- **`DEFAULT_GRADIENT`**: 基本グラデーション
-- **`STEP_GRADIENTS`**: 段階的グラデーション
-- **`TEXT_COLORS`**: テキストカラー
-- **`APP_COLORS`**: アプリ別カラー
-
-#### レギュレーション違反の禁止
-
-以下の色の使用は**禁止**です：
-
-- `cyan`, `teal`, `purple`などの青色系以外の色（アプリカラー除く）
-- `sky-400`, `blue-400`などの統一されていない色階調
-- レギュレーションにない色の組み合わせ
-
-レギュレーションの詳細は `src/app/globals.css` のコメントを参照してください。
+- カラー定数: `src/constants/COLORS.ts`
+- スタイル定数: `src/constants/STYLES.ts`
+- 共通コンポーネント: `src/components/common/`
 
 ### パフォーマンスの考慮
 
