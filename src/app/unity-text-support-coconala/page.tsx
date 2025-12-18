@@ -130,7 +130,7 @@ export default function UnityTextSupportCoconalaPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Unityテキストサポート_ココナラ.zip';
+      link.download = 'テキストチャットサポート_ココナラ.zip';
       link.click();
       URL.revokeObjectURL(url);
 

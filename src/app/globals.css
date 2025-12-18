@@ -290,14 +290,14 @@ body {
   max-height: 508px;
 }
 
-/* ランサーズ版（1220x686px 16:9横長） */
+/* ランサーズ版（1220x1240px 公式推奨サイズ） */
 .slide-container-lancers {
   width: 1220px;
-  height: 686px;
+  height: 1240px;
   min-width: 1220px;
-  min-height: 686px;
+  min-height: 1240px;
   max-width: 1220px;
-  max-height: 686px;
+  max-height: 1240px;
 }
 
 /* ========================================

@@ -130,7 +130,7 @@ export default function UnityVideoSupportCoconalaPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Unityビデオチャットサポート_ココナラ.zip';
+      link.download = 'ビデオチャットサポート_ココナラ.zip';
       link.click();
       URL.revokeObjectURL(url);
 

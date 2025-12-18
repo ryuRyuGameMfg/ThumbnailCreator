@@ -11,7 +11,7 @@ interface SlideWrapperProps {
   slideName?: string;
 }
 
-// ランサーズ用スライドラッパー（1220x686px 16:9横長）
+// ランサーズ用スライドラッパー（1220x1240px 公式推奨サイズ）
 const SlideWrapperLancers = forwardRef<HTMLDivElement, SlideWrapperProps>(
   ({ children, className = '', slideNumber = 1, slideName = 'slide' }, ref) => {
     const slideRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ const SlideWrapperLancers = forwardRef<HTMLDivElement, SlideWrapperProps>(
       try {
         const dataUrl = await toPng(slideRef.current, {
           width: 1220,
-          height: 686,
+          height: 1240,
           pixelRatio: 2,
         });
 

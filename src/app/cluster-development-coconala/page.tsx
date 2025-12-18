@@ -130,7 +130,7 @@ export default function ClusterDevelopmentCoconalaPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Clusterワールド開発_ココナラ.zip';
+      link.download = 'clusterワールド開発_ココナラ.zip';
       link.click();
       URL.revokeObjectURL(url);
 

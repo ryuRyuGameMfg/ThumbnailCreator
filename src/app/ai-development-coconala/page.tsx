@@ -140,7 +140,7 @@ export default function AiDevelopmentCoconalaPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'AI開発サービス_ココナラ.zip';
+      link.download = 'AIキャラクター開発_ココナラ.zip';
       link.click();
       URL.revokeObjectURL(url);
 

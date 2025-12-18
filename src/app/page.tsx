@@ -61,6 +61,20 @@ const projects = [
       },
     ],
   },
+  {
+    id: 'thumbnail-service',
+    name: 'サービス画像制作代行',
+    description: 'AIを使いこなすプロが作る格安爆速サービス画像',
+    platforms: [
+      {
+        href: '/thumbnail-service-coconala',
+        title: 'ココナラ版',
+        description: '620×620px 正方形 | 10スライド',
+        color: 'from-cyan-400 to-blue-600',
+        iconBg: 'bg-cyan-500',
+      },
+    ],
+  },
 ];
 
 export default function Home() {
