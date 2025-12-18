@@ -6,6 +6,7 @@ import { FONTS } from '@/constants/STYLES';
 
 // ========================================
 // Problem（お悩み） - サービス画像制作代行
+// 文字サイズ大きめ版
 // ========================================
 
 export function Problem() {
@@ -21,16 +22,16 @@ export function Problem() {
         <PinkTitleV2 english="PROBLEM" japanese="こんなお悩みありませんか?" />
 
         {/* コンテンツ */}
-        <div className="flex-1 flex flex-col gap-2.5 py-2">
+        <div className="flex-1 flex flex-col gap-3 py-2">
           {problems.map(({ num, title, desc }) => (
             <div
               key={num}
-              className="flex-1 bg-gradient-to-r from-sky-500 to-blue-600 rounded-xl px-4 py-3 flex items-center gap-3 shadow-lg"
+              className="flex-1 bg-gradient-to-r from-sky-500 to-blue-600 rounded-xl px-5 py-4 flex items-center gap-4 shadow-lg"
             >
-              <div className="text-4xl font-black text-white/20">{num}</div>
+              <div className="text-5xl font-black text-white/20">{num}</div>
               <div className="flex-1">
-                <div className="text-base font-bold text-white leading-tight mb-0.5">{title}</div>
-                <div className="text-xs text-white/90 leading-tight">{desc}</div>
+                <div className="text-xl font-bold text-white leading-tight mb-1">{title}</div>
+                <div className="text-base text-white/90 leading-tight">{desc}</div>
               </div>
             </div>
           ))}
