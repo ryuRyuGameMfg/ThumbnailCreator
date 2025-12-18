@@ -26,15 +26,15 @@ export function FAQ1() {
     },
     {
       question: 'ビデオチャットの準備は必要ですか？',
-      answer: 'PC・スマホ・タブレットで参加可能です。カメラOFFでもOK、音声と画面共有があれば大丈夫です。',
+      answer: 'PC・スマホ・タブレットで参加可能です。画面共有のみでOK。カメラOFFで顔出しなしでも大丈夫です！',
     },
     {
       question: 'どんな質問ができますか？',
-      answer: 'Unityの基本操作、エラー対応、2D/3Dゲーム開発、VR/AR開発など幅広く対応します。',
+      answer: 'Unityの基本操作、エラー対応、2D/3Dゲーム開発、VR/AR/AI開発など幅広く対応します。',
     },
     {
       question: '60分で足りない場合は？',
-      answer: '時間延長オプション（30分単位）をご利用いただけます。事前にご相談ください。',
+      answer: '時間延長オプション（30分単位）をご利用いただけます。当日延長も可能ですが、事前にご相談いただければ割安になります。',
     },
   ];
 
@@ -62,11 +62,10 @@ export function FAQ1() {
 
         <div className="mt-2 text-center">
           <p className="text-[10px] text-gray-500">
-            Unity公式サイト: https://unity.com/ja
+            詳細はココナラのサービスページをご覧ください
           </p>
         </div>
       </div>
     </SlideWrapper>
   );
 }
-

@@ -20,10 +20,10 @@ function SlideTitle({ english, japanese }: { english: string; japanese: string }
 
 export function Pricing() {
   const plans = [
-    { days: '3日間', price: '8,000円', popular: false },
-    { days: '5日間', price: '12,000円', popular: true },
-    { days: '7日間', price: '15,000円', popular: false },
-    { days: '30日間', price: '55,000円', popular: false },
+    { days: '3日間', price: '8,000円', badge: '人気', badgeColor: 'bg-pink-400 text-pink-900', bonus: null },
+    { days: '5日間', price: '12,000円', badge: 'おすすめ', badgeColor: 'bg-yellow-400 text-yellow-900', bonus: null },
+    { days: '7日間', price: '15,000円', badge: null, badgeColor: null, bonus: null },
+    { days: '30日間', price: '55,000円', badge: null, badgeColor: null, bonus: 'ビデオチャット60分無料' },
   ];
 
   return (
@@ -32,25 +32,30 @@ export function Pricing() {
         <SlideTitle english="PRICING" japanese="料金プラン（固定料金）" />
         
         <div className="flex-1 flex flex-col gap-2">
-          {plans.map(({ days, price, popular }, index) => (
+          {plans.map(({ days, price, badge, badgeColor, bonus }, index) => (
             <div
               key={index}
               className={`flex items-center justify-between px-4 py-3 rounded-xl shadow-lg relative overflow-hidden ${
-                popular 
+                badge === 'おすすめ'
                   ? 'bg-gradient-to-r from-sky-500 to-blue-600' 
                   : 'bg-gradient-to-r from-sky-400 to-sky-500'
               }`}
             >
-              {popular && (
-                <div className="absolute top-1 right-1 bg-yellow-400 text-yellow-900 text-[8px] font-black px-2 py-0.5 rounded">
-                  人気
+              {badge && (
+                <div className={`absolute top-1 right-1 ${badgeColor} text-[8px] font-black px-2 py-0.5 rounded`}>
+                  {badge}
                 </div>
               )}
               <div>
                 <div className="text-white font-bold text-base">{days}</div>
                 <div className="text-white/80 text-xs">質問し放題</div>
+                {bonus && (
+                  <div className="text-yellow-300 text-[10px] font-bold mt-0.5">
+                    🎁 {bonus}
+                  </div>
+                )}
               </div>
-              <div className={`font-black text-white ${popular ? 'text-2xl' : 'text-xl'}`}>
+              <div className={`font-black text-white ${badge === 'おすすめ' ? 'text-2xl' : 'text-xl'}`}>
                 {price}
               </div>
             </div>

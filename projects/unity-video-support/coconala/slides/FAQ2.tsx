@@ -34,7 +34,7 @@ export function FAQ2() {
     },
     {
       question: 'キャンセルはできますか？',
-      answer: '日時変更は柔軟に対応いたします。DMでご相談ください。',
+      answer: '購入後のキャンセルはできません。ただし日程の変更は可能ですので、DMでご相談ください。',
     },
   ];
 
@@ -69,4 +69,3 @@ export function FAQ2() {
     </SlideWrapper>
   );
 }
-
