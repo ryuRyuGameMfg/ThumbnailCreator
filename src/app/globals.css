@@ -1,0 +1,360 @@
+@import "tailwindcss";
+
+/* ========================================
+   ローカルフォント定義（@font-face）
+   ======================================== */
+
+/* HackGen - プログラミング用フォント */
+@font-face {
+  font-family: 'HackGen';
+  src: url('/fonts/HackGen-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'HackGen';
+  src: url('/fonts/HackGen-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* HackGen35 - 3:5幅のHackGen */
+@font-face {
+  font-family: 'HackGen35';
+  src: url('/fonts/HackGen35-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'HackGen35';
+  src: url('/fonts/HackGen35-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Kinkaku（金閣） - 装飾的な日本語フォント */
+@font-face {
+  font-family: 'Kinkaku';
+  src: url('/fonts/Kinkakuji-Normal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Melete - 幾何学的なアルファベットフォント */
+@font-face {
+  font-family: 'Melete';
+  src: url('/fonts/Melete-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Melete';
+  src: url('/fonts/Melete-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Melete';
+  src: url('/fonts/Melete-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Melete';
+  src: url('/fonts/Melete-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   カラー設計ドキュメント
+   ======================================== */
+/*
+  ■ グローバルカラー
+  --------------------------------------------------
+  アクセント（メイン）: blue-600 (#2563EB)
+  アクセント（ライト）: sky-500 (#0EA5E9)
+  アクセント（ダーク）: indigo-600 (#4F46E5)
+
+  テキスト（メイン）: gray-800 (#1F2937)
+  テキスト（サブ）  : gray-500 (#6B7280)
+  テキスト（無効）  : gray-400 (#9CA3AF)
+
+  背景（メイン）: white (#FFFFFF)
+  背景（サブ）  : gray-50 (#F9FAFB)
+  ボーダー     : gray-100, blue-100
+
+  ■ アプリカラー（4つのアプリのイメージカラー）
+  --------------------------------------------------
+  ライブ配信: rose-600 (#E11D48)
+  音声対話  : teal-600 (#0D9488)
+  動画生成  : indigo-600 (#4F46E5)
+  チャット  : amber-600 (#D97706)
+
+  ■ 青色系カラーレギュレーション（統一指針）
+  --------------------------------------------------
+  【基本カラーパレット（4段階・青色系のみ）】
+  レベル1（最も明るい）: sky-500 (#0EA5E9) / sky-600 (#0284C7)
+  レベル2（中間・メイン）: blue-500 (#3B82F6) / blue-600 (#2563EB) ※デフォルト
+  レベル3（やや暗い）: indigo-500 (#6366F1) / indigo-600 (#4F46E5)
+  レベル4（最も暗い）: violet-500 (#8B5CF6) / violet-600 (#7C3AED)
+
+  【各スライドでの使用例】
+  - Targetスライド: sky-600, blue-600, indigo-600, violet-600（4項目）
+  - Deliverablesスライド: sky-500, blue-500, indigo-500, violet-500, sky-600, blue-600（6項目・循環）
+  - Pricingスライド: sky-600, blue-600, indigo-600（3プラン）
+  - Flowスライド: sky-500, blue-500, indigo-500, violet-500（4ステップ）
+
+  【グラデーション使用ルール】
+  ■ 基本グラデーション（デフォルト）
+  - 用途: アイコン背景、カード背景など汎用的な箇所
+  - 指定: bg-gradient-to-r from-sky-500 to-blue-600
+  - 例: Problemスライド、UseCasesスライド、アプリ別スライドのアイコン
+
+  ■ 段階的グラデーション（差別化用・3パターン）
+  - 用途: 複数カードを段階的に差別化したい場合（Solutionスライドスタイル）
+  - パターン1（明るい）: bg-gradient-to-r from-sky-500 to-sky-600
+  - パターン2（中間）: bg-gradient-to-r from-sky-600 to-blue-600
+  - パターン3（暗い）: bg-gradient-to-r from-blue-600 to-indigo-600
+  - 例: Solutionスライドの3カード
+
+  ■ 背景グラデーション（薄い色）
+  - 用途: 白背景のカード背景など
+  - パターン1: bg-gradient-to-br from-sky-50 to-blue-50
+  - パターン2: bg-gradient-to-br from-blue-50 to-indigo-50
+  - パターン3: bg-gradient-to-br from-indigo-50 to-violet-50
+  - 例: Flowスライドの特徴カード
+
+  【共通色（全スライド統一）】
+  - タイトルテキスト: blue-600
+  - STEP番号テキスト: blue-600
+  - FAQ番号バッジ: blue-600
+  - ボーダー: blue-200
+  - アイコン背景グラデーション: from-sky-500 to-blue-600
+
+  【統一ルール】
+  1. 青色系の色は基本カラーパレット4段階から選択（sky, blue, indigo, violet）
+  2. アプリ別スライドのタイトルはアプリカラーを使用（rose-600, teal-600, indigo-600, amber-600）
+  3. アプリ別スライドのアイコン背景は基本グラデーション（from-sky-500 to-blue-600）を使用
+  4. 青色系以外の色（purple, pink等）はアプリカラー以外では使用しない
+
+  【禁止事項】
+  - 青色系以外の色（green, red, yellow等）を青色系の代わりに使用しない
+  - グラデーションの方向は to-r（横方向）を基本とし、背景のみ to-br（斜め）も可
+  - 統一されていない青色系の色（例: blue-400, sky-400等）は使用しない
+  - 基本カラーパレット4段階以外の青色系（例: cyan, azure等）は使用しない
+*/
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #1a1a1a;
+  
+  /* ========================================
+     カラーパレット
+     ======================================== */
+  
+  /* グレースケール */
+  --white: #FFFFFF;
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+  
+  /* ブルー系（メインアクセント） */
+  --sky-500: #0EA5E9;
+  --sky-600: #0284C7;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+  --indigo-600: #4F46E5;
+  
+  /* アプリ別カラー（ディープトーン） */
+  --app-live: #E11D48;     /* rose-600 */
+  --app-voice: #0D9488;    /* teal-600 */
+  --app-video: #4F46E5;    /* indigo-600 */
+  --app-chat: #D97706;     /* amber-600 */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* アクセントグラデーション */
+.gradient-accent {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+
+/* カード背景 */
+.card-white {
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E5E7EB;
+}
+
+.card-gray {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+/* アイコン背景 */
+.icon-bg {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+
+.icon-bg-light {
+  background: #EFF6FF;
+}
+
+/* カード別カラー */
+.icon-bg-1 {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+
+.icon-bg-2 {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.icon-bg-3 {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+}
+
+.icon-bg-4 {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+}
+
+/* テキストカラー */
+.text-primary {
+  color: #111827;
+}
+
+.text-secondary {
+  color: #4B5563;
+}
+
+.text-tertiary {
+  color: #6B7280;
+}
+
+.text-accent {
+  color: #2563EB;
+}
+
+/* バッジ */
+.badge-blue {
+  background: #EFF6FF;
+  color: #2563EB;
+  border: 1px solid #BFDBFE;
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+  color: #78350F;
+}
+
+/* ========================================
+   スライド固定サイズ
+   ======================================== */
+
+/* ココナラ版スライド（620x620px 正方形） */
+.slide-container {
+  width: 620px;
+  height: 620px;
+  min-width: 620px;
+  min-height: 620px;
+  max-width: 620px;
+  max-height: 620px;
+}
+
+/* Cover表紙用（500x508px 縦長 - ココナラ推奨比率1220:1240をスケールダウン） */
+.slide-container-cover {
+  width: 500px;
+  height: 508px;
+  min-width: 500px;
+  min-height: 508px;
+  max-width: 500px;
+  max-height: 508px;
+}
+
+/* ランサーズ版（1220x686px 16:9横長） */
+.slide-container-lancers {
+  width: 1220px;
+  height: 686px;
+  min-width: 1220px;
+  min-height: 686px;
+  max-width: 1220px;
+  max-height: 686px;
+}
+
+/* ========================================
+   シャドウ
+   ======================================== */
+.shadow-soft {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-medium {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   フォントファミリー
+   ======================================== */
+
+/* ========== Google Fonts ========== */
+
+/* 明朝体 - Noto Serif Japanese（高品質・スタンダード） */
+.font-noto-serif {
+  font-family: var(--font-noto-serif-jp), serif;
+}
+
+/* 明朝体 - しっぽり明朝（上品・エレガント） */
+.font-shippori {
+  font-family: var(--font-shippori-mincho), serif;
+}
+
+/* 明朝体 - Zen Old Mincho（クラシック・伝統的） */
+.font-zen-mincho {
+  font-family: var(--font-zen-old-mincho), serif;
+}
+
+/* ゴシック体 - Noto Sans JP（デフォルト） */
+.font-noto-sans {
+  font-family: var(--font-noto-sans-jp), sans-serif;
+}
+
+/* ========== ローカルフォント ========== */
+
+/* HackGen - プログラミング用フォント（テック感・視認性抜群） */
+.font-hackgen {
+  font-family: 'HackGen', monospace !important;
+}
+
+/* HackGen35 - 3:5幅のHackGen（より自然な日本語表示） */
+.font-hackgen35 {
+  font-family: 'HackGen35', monospace !important;
+}
+
+/* Kinkaku（金閣） - 装飾的な日本語フォント（漢字・タイトル向け） */
+.font-kinkaku {
+  font-family: 'Kinkaku', serif !important;
+}
+
+/* Melete - 幾何学的なアルファベットフォント（英語タイトル向け） */
+.font-melete {
+  font-family: 'Melete', sans-serif !important;
+}

@@ -1,0 +1,15 @@
+export { default as Slide02Problem } from './Slide02Problem';
+export { default as Slide03Solution } from './Slide03Solution';
+export { default as Slide04UseCases } from './Slide04UseCases';
+export { default as Slide06Deliverables } from './Slide06Deliverables';
+export { default as Slide07Flow } from './Slide07Flow';
+export { default as Slide08Target } from './Slide08Target';
+export { default as Slide09FAQ1 } from './Slide09FAQ1';
+export { default as Slide10FAQ2 } from './Slide10FAQ2';
+export { default as Slide11FAQ3 } from './Slide11FAQ3';
+export { default as Slide12PricingPlans } from './Slide12PricingPlans';
+export { default as Slide13Options } from './Slide13Options';
+export { default as Slide14LiveStream } from './Slide14LiveStream';
+export { default as Slide15VoiceChat } from './Slide15VoiceChat';
+export { default as Slide16VideoGen } from './Slide16VideoGen';
+export { default as Slide17TextChat } from './Slide17TextChat';
