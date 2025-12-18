@@ -24,19 +24,19 @@ export function Deliverables() {
       icon: <Video className="w-7 h-7 text-white" />,
       title: '60分間ビデオチャット',
       description: 'オプションで延長も可能',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       icon: <Monitor className="w-7 h-7 text-white" />,
       title: '画面共有サポート',
       description: '音声ON・カメラOFF可能',
-      gradient: 'from-cyan-400 to-blue-500',
+      gradient: 'from-blue-500 to-blue-600',
     },
     {
       icon: <FileText className="w-7 h-7 text-white" />,
       title: 'チャットログ・メモ納品',
       description: '後から見返せる記録を提供',
-      gradient: 'from-blue-400 to-indigo-500',
+      gradient: 'from-blue-500 to-indigo-500',
     },
   ];
 

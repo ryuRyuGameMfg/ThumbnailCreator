@@ -61,8 +61,8 @@ export function PricingOptions() {
           </div>
 
           {/* Cluster機能オプション */}
-          <div className="bg-white border-2 border-cyan-300 rounded-xl p-2 shadow-sm flex-1">
-            <h4 className="text-cyan-600 font-bold text-xs mb-1.5 flex items-center gap-1">
+          <div className="bg-white border-2 border-sky-300 rounded-xl p-2 shadow-sm flex-1">
+            <h4 className="text-blue-600 font-bold text-xs mb-1.5 flex items-center gap-1">
               <Plus className="w-3 h-3" />
               Cluster機能オプション
             </h4>
@@ -70,10 +70,10 @@ export function PricingOptions() {
               {featureOptions.map(({ name, price }, index) => (
                 <div
                   key={index}
-                  className="flex flex-col py-1 px-2 bg-cyan-50 rounded text-[9px]"
+                  className="flex flex-col py-1 px-2 bg-sky-50 rounded text-[9px]"
                 >
                   <span className="text-gray-700 font-bold leading-tight">{name}</span>
-                  <span className="text-cyan-600 font-bold">{price}</span>
+                  <span className="text-blue-600 font-bold">{price}</span>
                 </div>
               ))}
             </div>

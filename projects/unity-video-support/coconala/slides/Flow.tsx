@@ -25,28 +25,28 @@ export function Flow() {
       icon: <MessageSquare className="w-5 h-5 text-white" />,
       title: 'DMでご相談・お見積もり',
       description: 'ご予約の日程がなくてもDMからメッセージいただければ必ずご返信します',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       number: '2',
       icon: <Calendar className="w-5 h-5 text-white" />,
       title: 'ご購入・日程調整',
       description: 'ご都合の良い日時を調整します',
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: 'from-blue-500 to-blue-500',
     },
     {
       number: '3',
       icon: <Video className="w-5 h-5 text-white" />,
       title: 'ビデオチャット実施',
       description: '画面共有で問題解決・丁寧にサポート',
-      gradient: 'from-teal-400 to-teal-500',
+      gradient: 'from-indigo-500 to-indigo-500',
     },
     {
       number: '4',
       icon: <CheckCircle className="w-5 h-5 text-white" />,
       title: '完了・フォローアップ',
       description: '必要に応じてアフターサポート',
-      gradient: 'from-blue-400 to-blue-500',
+      gradient: 'from-violet-500 to-violet-500',
     },
   ];
 

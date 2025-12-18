@@ -23,22 +23,22 @@ export function UseCases() {
     {
       icon: <Users className="w-8 h-8 text-white" />,
       title: 'オンラインサロン',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       icon: <Calendar className="w-8 h-8 text-white" />,
       title: 'コミュニティイベント',
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: 'from-blue-500 to-blue-500',
     },
     {
       icon: <Radio className="w-8 h-8 text-white" />,
       title: 'ライブ配信',
-      gradient: 'from-teal-400 to-teal-500',
+      gradient: 'from-indigo-500 to-indigo-500',
     },
     {
       icon: <Gamepad2 className="w-8 h-8 text-white" />,
       title: 'ゲームイベント',
-      gradient: 'from-purple-400 to-purple-500',
+      gradient: 'from-violet-500 to-violet-500',
     },
   ];
 

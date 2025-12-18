@@ -40,7 +40,7 @@ export function PricingOptions() {
           </div>
 
           {/* 説明 */}
-          <div className="bg-gradient-to-r from-sky-600/30 to-blue-600/30 border-2 border-sky-400/50 rounded-xl p-4 backdrop-blur">
+          <div className="bg-gradient-to-r from-sky-600/30 to-blue-600/30 border-2 border-sky-500/50 rounded-xl p-4 backdrop-blur">
             <p className="text-white font-bold text-base mb-2">ファイルお預かり・即修復プラン</p>
             <p className="text-white/90 text-sm leading-relaxed">
               プロジェクト一式をお預かりし、エラーを修復して返却いたします。

@@ -18,27 +18,29 @@ function SlideTitle({ english, japanese }: { english: string; japanese: string }
   );
 }
 
+import { USECASES_COLORS } from '@/constants/COLORS';
+
 export function UseCases() {
   const useCases = [
     {
       icon: <Book className="w-8 h-8 text-white" />,
       title: 'Unityの基本操作',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: USECASES_COLORS[0],
     },
     {
       icon: <Bug className="w-8 h-8 text-white" />,
       title: 'バグやエラー解決',
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: USECASES_COLORS[1],
     },
     {
       icon: <Code className="w-8 h-8 text-white" />,
       title: '開発アドバイス',
-      gradient: 'from-teal-400 to-teal-500',
+      gradient: USECASES_COLORS[2],
     },
     {
       icon: <Sparkles className="w-8 h-8 text-white" />,
       title: 'AI開発・Web制作',
-      gradient: 'from-purple-400 to-purple-500',
+      gradient: USECASES_COLORS[3],
     },
   ];
 

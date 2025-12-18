@@ -18,10 +18,12 @@ function SlideTitle({ english, japanese }: { english: string; japanese: string }
   );
 }
 
+import { PRICING_COLORS } from '@/constants/COLORS';
+
 export function Pricing() {
   const plans = [
-    { days: '3日間', price: '8,000円', badge: '人気', badgeColor: 'bg-pink-400 text-pink-900', bonus: null },
-    { days: '5日間', price: '12,000円', badge: 'おすすめ', badgeColor: 'bg-yellow-400 text-yellow-900', bonus: null },
+    { days: '3日間', price: '8,000円', badge: '人気', badgeColor: 'bg-sky-500 text-sky-900', bonus: null },
+    { days: '5日間', price: '12,000円', badge: 'おすすめ', badgeColor: 'bg-blue-500 text-blue-900', bonus: null },
     { days: '7日間', price: '15,000円', badge: null, badgeColor: null, bonus: null },
     { days: '30日間', price: '55,000円', badge: null, badgeColor: null, bonus: 'ビデオチャット60分無料' },
   ];
@@ -35,11 +37,7 @@ export function Pricing() {
           {plans.map(({ days, price, badge, badgeColor, bonus }, index) => (
             <div
               key={index}
-              className={`flex items-center justify-between px-4 py-3 rounded-xl shadow-lg relative overflow-hidden ${
-                badge === 'おすすめ'
-                  ? 'bg-gradient-to-r from-sky-500 to-blue-600' 
-                  : 'bg-gradient-to-r from-sky-400 to-sky-500'
-              }`}
+              className={`flex items-center justify-between px-4 py-3 rounded-xl shadow-lg relative overflow-hidden bg-gradient-to-r ${PRICING_COLORS[index % PRICING_COLORS.length]}`}
             >
               {badge && (
                 <div className={`absolute top-1 right-1 ${badgeColor} text-[8px] font-black px-2 py-0.5 rounded`}>

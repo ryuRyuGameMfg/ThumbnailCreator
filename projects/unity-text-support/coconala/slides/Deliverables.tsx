@@ -24,19 +24,19 @@ export function Deliverables() {
       icon: <MessageSquareText className="w-7 h-7 text-white" />,
       title: '72時間質問し放題',
       description: 'テキストチャットで徹底サポート',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       icon: <Image className="w-7 h-7 text-white" />,
       title: '多様なサポート形式',
       description: 'テキスト・画像・動画・URLで回答',
-      gradient: 'from-cyan-400 to-blue-500',
+      gradient: 'from-blue-500 to-blue-600',
     },
     {
       icon: <Video className="w-7 h-7 text-white" />,
       title: 'プログラム提供',
       description: 'コードやプロジェクトファイルも共有',
-      gradient: 'from-blue-400 to-indigo-500',
+      gradient: 'from-blue-500 to-indigo-500',
     },
   ];
 

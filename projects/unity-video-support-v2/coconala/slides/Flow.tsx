@@ -11,28 +11,28 @@ export function Flow() {
       icon: <MessageSquare className="w-6 h-6 text-white" />,
       title: 'DMでご相談',
       description: '日程調整',
-      gradient: 'from-sky-500 to-sky-600',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       number: '2',
       icon: <Calendar className="w-6 h-6 text-white" />,
       title: 'ご購入・日程確定',
       description: '手続き完了',
-      gradient: 'from-sky-600 to-blue-600',
+      gradient: 'from-blue-500 to-blue-500',
     },
     {
       number: '3',
       icon: <Video className="w-6 h-6 text-white" />,
       title: 'ビデオチャット実施',
       description: '画面共有で解決',
-      gradient: 'from-sky-500 to-blue-600',
+      gradient: 'from-indigo-500 to-indigo-500',
     },
     {
       number: '4',
       icon: <CheckCircle className="w-6 h-6 text-white" />,
       title: '完了・記録納品',
       description: 'ログ・メモ提供',
-      gradient: 'from-blue-600 to-indigo-600',
+      gradient: 'from-violet-500 to-violet-500',
     },
   ];
 

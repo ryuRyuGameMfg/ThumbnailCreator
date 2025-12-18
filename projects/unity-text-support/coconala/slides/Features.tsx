@@ -18,31 +18,33 @@ function SlideTitle({ english, japanese }: { english: string; japanese: string }
   );
 }
 
+import { FEATURES_COLORS } from '@/constants/COLORS';
+
 export function Features() {
   const features = [
     {
       icon: <MessageSquare className="w-7 h-7 text-white" />,
       title: '24時間質問無制限',
       description: 'お好きな時に、お好きなだけ質問できます',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: FEATURES_COLORS[0],
     },
     {
       icon: <Clock className="w-7 h-7 text-white" />,
       title: '迅速なフィードバック',
       description: 'お問い合わせから3時間以内に回答',
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: FEATURES_COLORS[1],
     },
     {
       icon: <Lightbulb className="w-7 h-7 text-white" />,
       title: '多岐にわたるサポート',
       description: '基本から高度なテクニックまで幅広く対応',
-      gradient: 'from-blue-400 to-blue-500',
+      gradient: FEATURES_COLORS[2],
     },
     {
       icon: <Users className="w-7 h-7 text-white" />,
       title: '丁寧なヒアリング',
       description: 'お客様のニーズに徹底的に応えます',
-      gradient: 'from-indigo-400 to-indigo-500',
+      gradient: FEATURES_COLORS[3],
     },
   ];
 

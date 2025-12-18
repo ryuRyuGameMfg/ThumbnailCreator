@@ -11,28 +11,28 @@ export function Flow() {
       icon: <MessageCircle className="w-6 h-6 text-white" />,
       title: '無料相談・お見積り',
       description: '即日〜3日',
-      gradient: 'from-sky-500 to-sky-600',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       number: '2',
       icon: <ShoppingCart className="w-6 h-6 text-white" />,
       title: 'ご購入・仕様確定',
       description: '1〜2日',
-      gradient: 'from-sky-600 to-blue-600',
+      gradient: 'from-blue-500 to-blue-500',
     },
     {
       number: '3',
       icon: <Code className="w-6 h-6 text-white" />,
       title: '開発 & β版→修正',
       description: '5日〜',
-      gradient: 'from-sky-500 to-blue-600',
+      gradient: 'from-indigo-500 to-indigo-500',
     },
     {
       number: '4',
       icon: <Upload className="w-6 h-6 text-white" />,
       title: 'Clusterへアップロード',
       description: '即日',
-      gradient: 'from-blue-600 to-indigo-600',
+      gradient: 'from-violet-500 to-violet-500',
     },
   ];
 

@@ -18,25 +18,27 @@ function SlideTitle({ english, japanese }: { english: string; japanese: string }
   );
 }
 
+import { DELIVERABLES_COLORS } from '@/constants/COLORS';
+
 export function Deliverables() {
   const items = [
     {
       icon: <Package className="w-7 h-7 text-white" />,
       title: 'Clusterのワールド制作',
       description: 'お客様のご要望に合わせた完全カスタマイズ',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: DELIVERABLES_COLORS[0],
     },
     {
       icon: <Upload className="w-7 h-7 text-white" />,
       title: 'Clusterへのアップロード代行',
       description: 'すぐに使える状態でお届けします',
-      gradient: 'from-cyan-400 to-blue-500',
+      gradient: DELIVERABLES_COLORS[1],
     },
     {
       icon: <Wrench className="w-7 h-7 text-white" />,
       title: '30日間の無料修正',
       description: '納品後も安心のアフターサポート（一部有料）',
-      gradient: 'from-blue-400 to-indigo-500',
+      gradient: DELIVERABLES_COLORS[2],
     },
   ];
 

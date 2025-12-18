@@ -29,7 +29,7 @@ export function FAQ3() {
           {faqs.map(({ question, answer }, index) => (
             <div
               key={index}
-              className="bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-400/50 rounded-xl p-3 shadow-sm backdrop-blur"
+              className="bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/50 rounded-xl p-3 shadow-sm backdrop-blur"
             >
               <div className="flex items-start gap-2.5 mb-1">
                 <div className="w-6 h-6 bg-sky-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">

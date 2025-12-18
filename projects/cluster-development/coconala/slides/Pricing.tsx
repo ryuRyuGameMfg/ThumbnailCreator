@@ -25,8 +25,10 @@ export function Pricing() {
         <SlideTitle english="PRICING" japanese="料金プラン" />
         
         <div className="flex-1 flex flex-col justify-center gap-4">
+import { PRICING_COLORS, DEFAULT_GRADIENT } from '@/constants/COLORS';
+
           {/* メイン料金 */}
-          <div className="bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl p-6 shadow-xl text-center">
+          <div className={`bg-gradient-to-br ${DEFAULT_GRADIENT} rounded-2xl p-6 shadow-xl text-center`}>
             <div className="flex items-center justify-center gap-3 mb-2">
               <Coins className="w-8 h-8 text-white" />
               <h3 className="text-white font-bold text-lg">基本料金</h3>

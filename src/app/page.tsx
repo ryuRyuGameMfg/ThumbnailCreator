@@ -33,10 +33,17 @@ const projects = [
     platforms: [
       {
         href: '/cluster-coconala',
-        title: 'ココナラ版',
+        title: 'ココナラ版（オリジナル）',
         description: '620×620px 正方形 | 9スライド',
         color: 'from-sky-400 to-blue-500',
         iconBg: 'bg-sky-500',
+      },
+      {
+        href: '/cluster-v2-coconala',
+        title: 'ココナラ版 v2 (新背景)',
+        description: '620×620px | サイバー背景',
+        color: 'from-cyan-400 to-blue-600',
+        iconBg: 'bg-cyan-500',
       },
     ],
   },

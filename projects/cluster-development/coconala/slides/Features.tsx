@@ -24,19 +24,19 @@ export function Features() {
       icon: <MessageSquare className="w-7 h-7 text-white" />,
       title: '的確なヒアリング',
       description: 'アイデアをヒアリングシートで的確にキャッチ',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       icon: <Users className="w-7 h-7 text-white" />,
       title: '幅広い用途に適応',
       description: 'サロン、イベント、配信など多彩な活動に対応',
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: 'from-blue-500 to-blue-500',
     },
     {
       icon: <Radio className="w-7 h-7 text-white" />,
       title: '丁寧なコミュニケーション',
       description: 'Unity開発サポートも提供し、ニーズに応える',
-      gradient: 'from-blue-400 to-blue-500',
+      gradient: 'from-blue-500 to-blue-500',
     },
   ];
 

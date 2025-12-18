@@ -50,8 +50,8 @@ export function PricingOptions() {
           </div>
 
           {/* 説明 */}
-          <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-xl p-3">
-            <p className="text-cyan-700 font-bold text-sm mb-1">ファイルお預かり・即修復プラン</p>
+          <div className="bg-gradient-to-r from-sky-50 to-blue-50 border-2 border-blue-200 rounded-xl p-3">
+            <p className="text-blue-700 font-bold text-sm mb-1">ファイルお預かり・即修復プラン</p>
             <p className="text-gray-600 text-xs leading-relaxed">
               プロジェクト一式をお預かりし、ビルドエラーや実行エラーを修復して返却いたします。
             </p>

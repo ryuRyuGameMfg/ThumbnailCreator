@@ -18,6 +18,8 @@ function SlideTitle({ english, japanese }: { english: string; japanese: string }
   );
 }
 
+import { PRICING_COLORS } from '@/constants/COLORS';
+
 export function Pricing() {
   const plans = [
     {
@@ -25,21 +27,21 @@ export function Pricing() {
       price: '5,500円',
       description: 'ビデオチャット相談',
       icon: <Clock className="w-6 h-6 text-white" />,
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: PRICING_COLORS[0],
     },
     {
       duration: '90分',
       price: '8,000円',
       description: '30分延長（+2,500円）',
       icon: <Plus className="w-6 h-6 text-white" />,
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: PRICING_COLORS[1],
     },
     {
       duration: '120分',
       price: '10,500円',
       description: '60分延長（+5,000円）',
       icon: <Plus className="w-6 h-6 text-white" />,
-      gradient: 'from-teal-400 to-teal-500',
+      gradient: PRICING_COLORS[2],
     },
   ];
 
@@ -68,7 +70,7 @@ export function Pricing() {
           ))}
         </div>
 
-        <div className="mt-3 bg-gradient-to-r from-purple-50 to-sky-50 rounded-lg p-3 border border-sky-200">
+        <div className="mt-3 bg-gradient-to-r from-sky-50 to-blue-50 rounded-lg p-3 border border-sky-200">
           <p className="text-xs text-gray-600 font-hackgen leading-relaxed">
             ※ 詳細なオプションは次ページをご覧ください
           </p>

@@ -18,37 +18,39 @@ function SlideTitle({ english, japanese }: { english: string; japanese: string }
   );
 }
 
+import { FEATURES_COLORS, DELIVERABLES_COLORS } from '@/constants/COLORS';
+
 export function Features() {
   const features = [
     {
       icon: <Monitor className="w-6 h-6 text-white" />,
       title: '画面共有で即時解決',
       description: 'リアルタイム解析',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: FEATURES_COLORS[0],
     },
     {
       icon: <BookOpen className="w-6 h-6 text-white" />,
       title: '初心者向け解説',
       description: 'かみ砕いて説明',
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: FEATURES_COLORS[1],
     },
     {
       icon: <Layers className="w-6 h-6 text-white" />,
       title: '幅広い技術領域',
       description: '2D/3D・VR・AI対応',
-      gradient: 'from-teal-400 to-teal-500',
+      gradient: FEATURES_COLORS[2],
     },
     {
       icon: <MessageSquare className="w-6 h-6 text-white" />,
       title: 'ヒアリング重視',
       description: '60分をフル活用',
-      gradient: 'from-blue-400 to-blue-500',
+      gradient: FEATURES_COLORS[3],
     },
     {
       icon: <Clock className="w-6 h-6 text-white" />,
       title: '柔軟な対応',
       description: 'DM返信保証',
-      gradient: 'from-purple-400 to-purple-500',
+      gradient: DELIVERABLES_COLORS[4], // 5項目目はDeliverablesの色を使用
     },
   ];
 

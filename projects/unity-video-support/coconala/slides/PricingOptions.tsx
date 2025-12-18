@@ -25,14 +25,14 @@ export function PricingOptions() {
       title: 'ファイルお預かり・即修復',
       price: '30,000円〜',
       note: 'お見積もり',
-      gradient: 'from-sky-400 to-sky-500',
+      gradient: 'from-sky-500 to-sky-500',
     },
     {
       icon: <Calendar className="w-5 h-5 text-white" />,
       title: '定額料金型・定期講座',
       price: 'お見積もり',
       note: 'メッセージでご相談ください',
-      gradient: 'from-cyan-400 to-cyan-500',
+      gradient: 'from-blue-500 to-blue-500',
     },
   ];
 
@@ -59,7 +59,7 @@ export function PricingOptions() {
           ))}
         </div>
 
-        <div className="mt-3 bg-gradient-to-r from-purple-50 to-sky-50 rounded-lg p-3 border border-sky-200">
+        <div className="mt-3 bg-gradient-to-r from-sky-50 to-blue-50 rounded-lg p-3 border border-sky-200">
           <div className="flex items-start gap-2">
             <MessageSquare className="w-4 h-4 text-sky-600 flex-shrink-0 mt-0.5" />
             <p className="text-xs text-gray-700 font-hackgen leading-relaxed">
