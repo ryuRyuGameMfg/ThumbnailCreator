@@ -41,9 +41,37 @@ const projects = [
       {
         href: '/cluster-coconala',
         title: 'ココナラ版',
-        description: '620×620px 正方形 | 6スライド',
+        description: '620×620px 正方形 | 9スライド',
         color: 'from-sky-400 to-blue-500',
         iconBg: 'bg-sky-500',
+      },
+    ],
+  },
+  {
+    id: 'unity-text-support',
+    name: 'Unityテキストサポート',
+    description: '72時間質問し放題サービス',
+    platforms: [
+      {
+        href: '/unity-text-coconala',
+        title: 'ココナラ版',
+        description: '620×620px 正方形 | 9スライド',
+        color: 'from-orange-400 to-red-500',
+        iconBg: 'bg-orange-500',
+      },
+    ],
+  },
+  {
+    id: 'unity-video-support',
+    name: 'Unityビデオチャットサポート',
+    description: '60分間画面共有サポート',
+    platforms: [
+      {
+        href: '/unity-video-coconala',
+        title: 'ココナラ版',
+        description: '620×620px 正方形 | 9スライド',
+        color: 'from-purple-400 to-pink-500',
+        iconBg: 'bg-purple-500',
       },
     ],
   },
