@@ -5,19 +5,18 @@ import { toPng } from 'html-to-image';
 import { Download, Loader2, Eye, EyeOff } from 'lucide-react';
 import JSZip from 'jszip';
 import {
+  Cover,
   Problem,
   Solution,
   Features,
-  UseCases,
-  Deliverables,
-  Pricing,
-  PricingOptions,
+  Benefits,
+  Target,
   Flow,
-  FAQ1,
-  FAQ2,
-  FAQ3,
-} from '@projects/unity-video-support/coconala/slides';
-import { SAFE_AREA_TOP, SAFE_AREA_BOTTOM } from '@projects/unity-video-support/coconala/SlideWrapper';
+  Pricing,
+  FAQ,
+  CTA,
+} from '@projects/thumbnail-service/coconala/slides';
+import { SAFE_AREA_TOP, SAFE_AREA_BOTTOM } from '@projects/thumbnail-service/coconala/SlideWrapper';
 
 // ========== ココナラ版（620x620px 正方形） ==========
 const SLIDE_WIDTH = 620;
@@ -44,28 +43,25 @@ function SlideRow({ children }: { children: React.ReactNode }) {
 
 function SlideContainer({ children }: { children: React.ReactNode }) {
   const showSafeArea = useContext(SafeAreaContext);
-  
+
   return (
     <div className="relative flex-shrink-0">
       <div className={`w-[${SLIDE_WIDTH}px] h-[${SLIDE_HEIGHT}px] bg-white rounded-2xl shadow-xl overflow-hidden`}
            style={{ width: SLIDE_WIDTH, height: SLIDE_HEIGHT }}>
         {children}
       </div>
-      {/* セーフエリアオーバーレイ（グローバル表示） */}
+      {/* セーフエリアオーバーレイ */}
       {showSafeArea && (
         <div className="absolute inset-0 pointer-events-none z-30 rounded-2xl overflow-hidden">
-          {/* 上部危険エリア */}
-          <div 
+          <div
             className="absolute left-0 right-0 top-0 bg-red-500/20 border-b-2 border-red-500"
             style={{ height: SAFE_AREA_TOP }}
           />
-          {/* 下部危険エリア */}
-          <div 
+          <div
             className="absolute left-0 right-0 bottom-0 bg-red-500/20 border-t-2 border-red-500"
             style={{ height: SAFE_AREA_BOTTOM }}
           />
-          {/* セーフエリア中央線（参考） */}
-          <div 
+          <div
             className="absolute left-0 right-0 border border-green-500/50"
             style={{ top: SAFE_AREA_TOP, bottom: SAFE_AREA_BOTTOM }}
           />
@@ -76,20 +72,19 @@ function SlideContainer({ children }: { children: React.ReactNode }) {
 }
 
 const slideInfo = [
-  { name: 'お悩み', title: 'お悩み' },
-  { name: '解決策', title: '解決策' },
-  { name: '4つの特徴', title: '4つの特徴' },
-  { name: 'サポート範囲', title: 'サポート範囲' },
-  { name: 'サービス内容', title: 'サービス内容' },
-  { name: '料金プラン', title: '料金プラン' },
-  { name: '有料オプション', title: '有料オプション' },
-  { name: 'サービスの流れ', title: 'サービスの流れ' },
-  { name: 'FAQ_基礎知識', title: 'FAQ - 基礎知識' },
-  { name: 'FAQ_利用方法', title: 'FAQ - 利用方法' },
-  { name: 'FAQ_サポート実績', title: 'FAQ - サポート実績' },
+  { name: 'cover', title: 'カバー' },
+  { name: 'problem', title: 'お悩み' },
+  { name: 'solution', title: '解決策' },
+  { name: 'features', title: '選ばれる理由' },
+  { name: 'benefits', title: '得られる成果' },
+  { name: 'target', title: 'こんな方におすすめ' },
+  { name: 'flow', title: 'サービスの流れ' },
+  { name: 'pricing', title: '料金プラン' },
+  { name: 'faq', title: 'よくある質問' },
+  { name: 'cta', title: 'お問い合わせ' },
 ];
 
-export default function UnityVideoSupportCoconalaPage() {
+export default function ThumbnailServiceCoconalaPage() {
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [showSafeArea, setShowSafeArea] = useState(false);
@@ -130,7 +125,7 @@ export default function UnityVideoSupportCoconalaPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Unityビデオチャットサポート_ココナラ.zip';
+      link.download = 'thumbnail_service_coconala_slides.zip';
       link.click();
       URL.revokeObjectURL(url);
 
@@ -163,9 +158,9 @@ export default function UnityVideoSupportCoconalaPage() {
         <div className="bg-white border-b border-gray-200 py-4 px-8 sticky top-0 z-50">
           <div className="max-w-[2400px] mx-auto flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-black text-gray-900">Unityビデオチャットサポート - ココナラ版</h1>
+              <h1 className="text-2xl font-black text-gray-900">サービス画像制作代行 - ココナラ版</h1>
               <p className="text-gray-500 text-sm mt-1">
-                全11スライド | {SLIDE_WIDTH}×{SLIDE_HEIGHT}px（正方形）|
+                全10スライド | {SLIDE_WIDTH}×{SLIDE_HEIGHT}px（正方形）|
                 セーフエリア: 上下{SAFE_AREA_TOP}px切れる
               </p>
             </div>
@@ -173,8 +168,8 @@ export default function UnityVideoSupportCoconalaPage() {
               <button
                 onClick={() => setShowSafeArea(!showSafeArea)}
                 className={`px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 font-bold transition-colors ${
-                  showSafeArea 
-                    ? 'bg-red-100 text-red-700 border-2 border-red-300' 
+                  showSafeArea
+                    ? 'bg-red-100 text-red-700 border-2 border-red-300'
                     : 'bg-gray-100 text-gray-700 border-2 border-gray-200'
                 }`}
               >
@@ -202,117 +197,106 @@ export default function UnityVideoSupportCoconalaPage() {
           </div>
         </div>
 
-      {/* 1. お悩み */}
-      <SectionTitle title="1. こんなお悩みありませんか?" />
+        {/* 1. カバー */}
+        <SectionTitle title="1. カバー（トップサムネイル）" />
         <SlideRow>
           <SlideContainer>
             <div ref={setSlideRef(0)} className="w-full h-full">
+              <Cover />
+            </div>
+          </SlideContainer>
+        </SlideRow>
+
+        {/* 2. お悩み */}
+        <SectionTitle title="2. こんなお悩みありませんか?" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(1)} className="w-full h-full">
               <Problem />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 2. 解決策 */}
-      <SectionTitle title="2. 全部解決します" />
+        {/* 3. 解決策 */}
+        <SectionTitle title="3. このサービスで全部解決!" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(1)} className="w-full h-full">
+            <div ref={setSlideRef(2)} className="w-full h-full">
               <Solution />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 3. 4つの特徴 */}
-      <SectionTitle title="3. 4つのサービスの特徴" />
+        {/* 4. 選ばれる理由 */}
+        <SectionTitle title="4. 選ばれる4つの理由" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(2)} className="w-full h-full">
+            <div ref={setSlideRef(3)} className="w-full h-full">
               <Features />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 4. サポート範囲 */}
-      <SectionTitle title="4. サポート範囲" />
-        <SlideRow>
-          <SlideContainer>
-            <div ref={setSlideRef(3)} className="w-full h-full">
-              <UseCases />
-            </div>
-          </SlideContainer>
-        </SlideRow>
-
-      {/* 5. サービス内容 */}
-      <SectionTitle title="5. サービス内容" />
+        {/* 5. 得られる成果 */}
+        <SectionTitle title="5. 得られる成果" />
         <SlideRow>
           <SlideContainer>
             <div ref={setSlideRef(4)} className="w-full h-full">
-              <Deliverables />
+              <Benefits />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 6. 料金プラン */}
-      <SectionTitle title="6. 料金プラン" />
-      <SlideRow>
-        <SlideContainer>
-          <div ref={setSlideRef(5)} className="w-full h-full">
-            <Pricing />
-          </div>
-        </SlideContainer>
-      </SlideRow>
+        {/* 6. こんな方におすすめ */}
+        <SectionTitle title="6. こんな方におすすめ" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(5)} className="w-full h-full">
+              <Target />
+            </div>
+          </SlideContainer>
+        </SlideRow>
 
-      {/* 7. 有料オプション */}
-      <SectionTitle title="7. 有料オプション" />
-      <SlideRow>
-        <SlideContainer>
-          <div ref={setSlideRef(6)} className="w-full h-full">
-            <PricingOptions />
-          </div>
-        </SlideContainer>
-      </SlideRow>
+        {/* 7. サービスの流れ */}
+        <SectionTitle title="7. サービスの流れ" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(6)} className="w-full h-full">
+              <Flow />
+            </div>
+          </SlideContainer>
+        </SlideRow>
 
-      {/* 8. サービスの流れ */}
-      <SectionTitle title="8. サービスの流れ" />
-      <SlideRow>
-        <SlideContainer>
-          <div ref={setSlideRef(7)} className="w-full h-full">
-            <Flow />
-          </div>
-        </SlideContainer>
-      </SlideRow>
+        {/* 8. 料金プラン */}
+        <SectionTitle title="8. 料金プラン" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(7)} className="w-full h-full">
+              <Pricing />
+            </div>
+          </SlideContainer>
+        </SlideRow>
 
-      {/* 9. よくある質問 - 基礎知識 */}
-      <SectionTitle title="9. よくある質問 - 基礎知識" />
-      <SlideRow>
-        <SlideContainer>
-          <div ref={setSlideRef(8)} className="w-full h-full">
-            <FAQ1 />
-          </div>
-        </SlideContainer>
-      </SlideRow>
+        {/* 9. よくある質問 */}
+        <SectionTitle title="9. よくある質問" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(8)} className="w-full h-full">
+              <FAQ />
+            </div>
+          </SlideContainer>
+        </SlideRow>
 
-      {/* 10. よくある質問 - 利用方法 */}
-      <SectionTitle title="10. よくある質問 - 利用方法" />
-      <SlideRow>
-        <SlideContainer>
-          <div ref={setSlideRef(9)} className="w-full h-full">
-            <FAQ2 />
-          </div>
-        </SlideContainer>
-      </SlideRow>
-
-      {/* 11. よくある質問 - サポート・実績 */}
-      <SectionTitle title="11. よくある質問 - サポート・実績" />
-      <SlideRow>
-        <SlideContainer>
-          <div ref={setSlideRef(10)} className="w-full h-full">
-            <FAQ3 />
-          </div>
-        </SlideContainer>
-      </SlideRow>
+        {/* 10. お問い合わせ */}
+        <SectionTitle title="10. お問い合わせ" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(9)} className="w-full h-full">
+              <CTA />
+            </div>
+          </SlideContainer>
+        </SlideRow>
       </main>
     </SafeAreaContext.Provider>
   );
 }
-

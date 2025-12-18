@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { FileText, Image, FolderOpen, Download } from 'lucide-react';
-import { useState } from 'react';
 
 // プロジェクトデータ
 const projects = [
@@ -65,8 +64,6 @@ const projects = [
 ];
 
 export default function Home() {
-  const [downloadingUrl, setDownloadingUrl] = useState<string | null>(null);
-
   const handleDownload = (href: string) => {
     // URLに autoDownload パラメータを追加
     const downloadUrl = `${href}?autoDownload=true`;

@@ -1,0 +1,11 @@
+// Thumbnail Service - Slides export
+export { Cover } from './Cover';
+export { Problem } from './Problem';
+export { Solution } from './Solution';
+export { Features } from './Features';
+export { Benefits } from './Benefits';
+export { Target } from './Target';
+export { Flow } from './Flow';
+export { Pricing } from './Pricing';
+export { FAQ } from './FAQ';
+export { CTA } from './CTA';

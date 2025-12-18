@@ -2,7 +2,6 @@
 
 import { forwardRef, ReactNode, useRef, useImperativeHandle } from 'react';
 import { toPng } from 'html-to-image';
-import Image from 'next/image';
 
 // ========================================
 // ココナラ サムネイル仕様
@@ -86,15 +85,14 @@ const SlideWrapper = forwardRef<SlideWrapperHandle, SlideWrapperProps>(
           className={`slide-container relative overflow-hidden ${className}`}
         >
           {/* 背景画像 */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/BG.png"
-              alt="Background"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: 'url(/images/BG.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
 
           {/* コンテンツエリア（セーフエリアを考慮したパディング） */}
           <div 

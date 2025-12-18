@@ -1,10 +1,12 @@
 'use client';
 
-import { useRef, useCallback, useState, createContext, useContext } from 'react';
+import { useRef, useCallback, useState, createContext, useContext, useEffect } from 'react';
 import { toPng } from 'html-to-image';
 import { Download, Loader2, Eye, EyeOff } from 'lucide-react';
 import JSZip from 'jszip';
-import { 
+import {
+  Problem,
+  Solution,
   Features,
   UseCases,
   Deliverables,
@@ -74,15 +76,17 @@ function SlideContainer({ children }: { children: React.ReactNode }) {
 }
 
 const slideInfo = [
-  { name: 'features', title: '4つの特徴' },
-  { name: 'usecases', title: 'サポート範囲' },
-  { name: 'deliverables', title: 'サービス内容' },
-  { name: 'pricing', title: '料金プラン' },
-  { name: 'pricing-options', title: '有料オプション' },
-  { name: 'flow', title: 'サービスの流れ' },
-  { name: 'faq1', title: 'FAQ - 基礎知識' },
-  { name: 'faq2', title: 'FAQ - 利用方法' },
-  { name: 'faq3', title: 'FAQ - サポート実績' },
+  { name: 'お悩み', title: 'お悩み' },
+  { name: '解決策', title: '解決策' },
+  { name: '4つの特徴', title: '4つの特徴' },
+  { name: 'サポート範囲', title: 'サポート範囲' },
+  { name: 'サービス内容', title: 'サービス内容' },
+  { name: '料金プラン', title: '料金プラン' },
+  { name: '有料オプション', title: '有料オプション' },
+  { name: 'サービスの流れ', title: 'サービスの流れ' },
+  { name: 'FAQ_基礎知識', title: 'FAQ - 基礎知識' },
+  { name: 'FAQ_利用方法', title: 'FAQ - 利用方法' },
+  { name: 'FAQ_サポート実績', title: 'FAQ - サポート実績' },
 ];
 
 export default function ClusterDevelopmentCoconalaPage() {
@@ -91,6 +95,7 @@ export default function ClusterDevelopmentCoconalaPage() {
   const [showSafeArea, setShowSafeArea] = useState(false);
   
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const hasAutoDownloaded = useRef(false);
 
   const setSlideRef = (index: number) => (el: HTMLDivElement | null) => {
     slideRefs.current[index] = el;
@@ -125,7 +130,7 @@ export default function ClusterDevelopmentCoconalaPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'cluster_development_coconala_slides.zip';
+      link.download = 'Clusterワールド開発_ココナラ.zip';
       link.click();
       URL.revokeObjectURL(url);
 
@@ -138,6 +143,19 @@ export default function ClusterDevelopmentCoconalaPage() {
     }
   }, []);
 
+  // 自動ダウンロード機能
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const autoDownload = params.get('autoDownload');
+
+    if (autoDownload === 'true' && !hasAutoDownloaded.current && slideRefs.current.length > 0) {
+      hasAutoDownloaded.current = true;
+      setTimeout(() => {
+        handleDownloadAll();
+      }, 2000);
+    }
+  }, [handleDownloadAll]);
+
   return (
     <SafeAreaContext.Provider value={showSafeArea}>
       <main className="min-h-screen bg-gray-50">
@@ -147,7 +165,7 @@ export default function ClusterDevelopmentCoconalaPage() {
             <div>
               <h1 className="text-2xl font-black text-gray-900">Clusterワールド開発 - ココナラ版</h1>
               <p className="text-gray-500 text-sm mt-1">
-                全9スライド | {SLIDE_WIDTH}×{SLIDE_HEIGHT}px（正方形）| 
+                全11スライド | {SLIDE_WIDTH}×{SLIDE_HEIGHT}px（正方形）|
                 セーフエリア: 上下{SAFE_AREA_TOP}px切れる
               </p>
             </div>
@@ -184,91 +202,111 @@ export default function ClusterDevelopmentCoconalaPage() {
           </div>
         </div>
 
-      {/* 1. 4つの特徴 */}
-      <SectionTitle title="1. 4つのサービスの特徴" />
+      {/* 1. お悩み */}
+      <SectionTitle title="1. こんなお悩みありませんか?" />
         <SlideRow>
           <SlideContainer>
             <div ref={setSlideRef(0)} className="w-full h-full">
+              <Problem />
+            </div>
+          </SlideContainer>
+        </SlideRow>
+
+      {/* 2. 解決策 */}
+      <SectionTitle title="2. 全部解決します" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(1)} className="w-full h-full">
+              <Solution />
+            </div>
+          </SlideContainer>
+        </SlideRow>
+
+      {/* 3. 4つの特徴 */}
+      <SectionTitle title="3. 4つのサービスの特徴" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(2)} className="w-full h-full">
               <Features />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 2. サポート範囲 */}
-      <SectionTitle title="2. サポート範囲" />
+      {/* 4. サポート範囲 */}
+      <SectionTitle title="4. サポート範囲" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(1)} className="w-full h-full">
+            <div ref={setSlideRef(3)} className="w-full h-full">
               <UseCases />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 3. サービス内容 */}
-      <SectionTitle title="3. サービス内容" />
+      {/* 5. サービス内容 */}
+      <SectionTitle title="5. サービス内容" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(2)} className="w-full h-full">
+            <div ref={setSlideRef(4)} className="w-full h-full">
               <Deliverables />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 4. 料金プラン */}
-      <SectionTitle title="4. 料金プラン" />
+      {/* 6. 料金プラン */}
+      <SectionTitle title="6. 料金プラン" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(3)} className="w-full h-full">
+          <div ref={setSlideRef(5)} className="w-full h-full">
             <Pricing />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 5. 有料オプション */}
-      <SectionTitle title="5. 有料オプション" />
+      {/* 7. 有料オプション */}
+      <SectionTitle title="7. 有料オプション" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(4)} className="w-full h-full">
+          <div ref={setSlideRef(6)} className="w-full h-full">
             <PricingOptions />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 6. サービスの流れ */}
-      <SectionTitle title="6. サービスの流れ" />
+      {/* 8. サービスの流れ */}
+      <SectionTitle title="8. サービスの流れ" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(5)} className="w-full h-full">
+          <div ref={setSlideRef(7)} className="w-full h-full">
             <Flow />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 7. よくある質問 - 基礎知識 */}
-      <SectionTitle title="7. よくある質問 - 基礎知識" />
+      {/* 9. よくある質問 - 基礎知識 */}
+      <SectionTitle title="9. よくある質問 - 基礎知識" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(6)} className="w-full h-full">
+          <div ref={setSlideRef(8)} className="w-full h-full">
             <FAQ1 />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 8. よくある質問 - 利用方法 */}
-      <SectionTitle title="8. よくある質問 - 利用方法" />
+      {/* 10. よくある質問 - 利用方法 */}
+      <SectionTitle title="10. よくある質問 - 利用方法" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(7)} className="w-full h-full">
+          <div ref={setSlideRef(9)} className="w-full h-full">
             <FAQ2 />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 9. よくある質問 - サポート・実績 */}
-      <SectionTitle title="9. よくある質問 - サポート・実績" />
+      {/* 11. よくある質問 - サポート・実績 */}
+      <SectionTitle title="11. よくある質問 - サポート・実績" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(8)} className="w-full h-full">
+          <div ref={setSlideRef(10)} className="w-full h-full">
             <FAQ3 />
           </div>
         </SlideContainer>

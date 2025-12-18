@@ -1,3 +1,5 @@
+export { Problem } from './Problem';
+export { Solution } from './Solution';
 export { Features } from './Features';
 export { UseCases } from './UseCases';
 export { Deliverables } from './Deliverables';

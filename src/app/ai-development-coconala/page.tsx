@@ -6,6 +6,8 @@ import { Download, Loader2, Eye, EyeOff } from 'lucide-react';
 import JSZip from 'jszip';
 import {
   Cover,
+  Problem,
+  Solution,
   Features,
   Apps,
   VoiceChat,
@@ -79,20 +81,22 @@ function SlideContainer({ children }: { children: React.ReactNode }) {
 }
 
 const slideInfo = [
-  { name: 'cover', title: 'トップサムネイル' },
-  { name: 'features', title: '5つの特徴' },
-  { name: 'apps', title: '4つのアプリケーション' },
-  { name: 'voice', title: '音声対話' },
-  { name: 'live', title: 'ライブ配信' },
-  { name: 'video', title: '動画生成' },
-  { name: 'chat', title: 'テキストチャット' },
-  { name: 'deliverables', title: 'サービス内容' },
-  { name: 'pricing', title: '料金プラン' },
-  { name: 'pricing-options', title: 'オプション料金' },
-  { name: 'flow', title: 'サービスの流れ' },
-  { name: 'faq1', title: 'FAQ - よくある質問' },
-  { name: 'faq2', title: 'FAQ - 利用方法' },
-  { name: 'faq3', title: 'FAQ - サポート・実績' },
+  { name: 'トップサムネイル', title: 'トップサムネイル' },
+  { name: 'お悩み', title: 'お悩み' },
+  { name: '解決策', title: '解決策' },
+  { name: '5つの特徴', title: '5つの特徴' },
+  { name: '4つのアプリケーション', title: '4つのアプリケーション' },
+  { name: '音声対話', title: '音声対話' },
+  { name: 'ライブ配信', title: 'ライブ配信' },
+  { name: '動画生成', title: '動画生成' },
+  { name: 'テキストチャット', title: 'テキストチャット' },
+  { name: 'サービス内容', title: 'サービス内容' },
+  { name: '料金プラン', title: '料金プラン' },
+  { name: 'オプション料金', title: 'オプション料金' },
+  { name: 'サービスの流れ', title: 'サービスの流れ' },
+  { name: 'FAQ_よくある質問', title: 'FAQ - よくある質問' },
+  { name: 'FAQ_利用方法', title: 'FAQ - 利用方法' },
+  { name: 'FAQ_サポート実績', title: 'FAQ - サポート・実績' },
 ];
 
 export default function AiDevelopmentCoconalaPage() {
@@ -136,7 +140,7 @@ export default function AiDevelopmentCoconalaPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'ai_development_coconala_slides.zip';
+      link.download = 'AI開発サービス_ココナラ.zip';
       link.click();
       URL.revokeObjectURL(url);
 
@@ -172,7 +176,7 @@ export default function AiDevelopmentCoconalaPage() {
             <div>
               <h1 className="text-2xl font-black text-gray-900">AI開発サービス - ココナラ版</h1>
               <p className="text-gray-500 text-sm mt-1">
-                全14スライド | {SLIDE_WIDTH}×{SLIDE_HEIGHT}px（正方形）|
+                全16スライド | {SLIDE_WIDTH}×{SLIDE_HEIGHT}px（正方形）|
                 セーフエリア: 上下{SAFE_AREA_TOP}px切れる
               </p>
             </div>
@@ -219,131 +223,151 @@ export default function AiDevelopmentCoconalaPage() {
           </SlideContainer>
         </SlideRow>
 
-      {/* 2. 5つの特徴 */}
-      <SectionTitle title="2. 5つのサービスの特徴" />
+      {/* 2. お悩み */}
+      <SectionTitle title="2. こんなお悩みありませんか?" />
         <SlideRow>
           <SlideContainer>
             <div ref={setSlideRef(1)} className="w-full h-full">
+              <Problem />
+            </div>
+          </SlideContainer>
+        </SlideRow>
+
+      {/* 3. 解決策 */}
+      <SectionTitle title="3. 全部解決します" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(2)} className="w-full h-full">
+              <Solution />
+            </div>
+          </SlideContainer>
+        </SlideRow>
+
+      {/* 4. 5つの特徴 */}
+      <SectionTitle title="4. 5つのサービスの特徴" />
+        <SlideRow>
+          <SlideContainer>
+            <div ref={setSlideRef(3)} className="w-full h-full">
               <Features />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 3. 4つのアプリケーション */}
-      <SectionTitle title="3. 4つのアプリケーション" />
+      {/* 5. 4つのアプリケーション */}
+      <SectionTitle title="5. 4つのアプリケーション" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(2)} className="w-full h-full">
+            <div ref={setSlideRef(4)} className="w-full h-full">
               <Apps />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 4. 音声対話 */}
-      <SectionTitle title="4. 音声対話" />
+      {/* 6. 音声対話 */}
+      <SectionTitle title="6. 音声対話" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(3)} className="w-full h-full">
+            <div ref={setSlideRef(5)} className="w-full h-full">
               <VoiceChat />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 5. ライブ配信 */}
-      <SectionTitle title="5. ライブ配信" />
+      {/* 7. ライブ配信 */}
+      <SectionTitle title="7. ライブ配信" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(4)} className="w-full h-full">
+            <div ref={setSlideRef(6)} className="w-full h-full">
               <LiveStream />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 6. 動画生成 */}
-      <SectionTitle title="6. 動画生成" />
+      {/* 8. 動画生成 */}
+      <SectionTitle title="8. 動画生成" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(5)} className="w-full h-full">
+            <div ref={setSlideRef(7)} className="w-full h-full">
               <VideoGen />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 7. テキストチャット */}
-      <SectionTitle title="7. テキストチャット" />
+      {/* 9. テキストチャット */}
+      <SectionTitle title="9. テキストチャット" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(6)} className="w-full h-full">
+            <div ref={setSlideRef(8)} className="w-full h-full">
               <TextChat />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 8. サービス内容 */}
-      <SectionTitle title="8. サービス内容" />
+      {/* 10. サービス内容 */}
+      <SectionTitle title="10. サービス内容" />
         <SlideRow>
           <SlideContainer>
-            <div ref={setSlideRef(7)} className="w-full h-full">
+            <div ref={setSlideRef(9)} className="w-full h-full">
               <Deliverables />
             </div>
           </SlideContainer>
         </SlideRow>
 
-      {/* 9. 料金プラン */}
-      <SectionTitle title="9. 料金プラン" />
+      {/* 11. 料金プラン */}
+      <SectionTitle title="11. 料金プラン" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(8)} className="w-full h-full">
+          <div ref={setSlideRef(10)} className="w-full h-full">
             <Pricing />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 10. オプション料金 */}
-      <SectionTitle title="10. オプション料金" />
+      {/* 12. オプション料金 */}
+      <SectionTitle title="12. オプション料金" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(9)} className="w-full h-full">
+          <div ref={setSlideRef(11)} className="w-full h-full">
             <PricingOptions />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 11. サービスの流れ */}
-      <SectionTitle title="11. サービスの流れ" />
+      {/* 13. サービスの流れ */}
+      <SectionTitle title="13. サービスの流れ" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(10)} className="w-full h-full">
+          <div ref={setSlideRef(12)} className="w-full h-full">
             <Flow />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 12. よくある質問 */}
-      <SectionTitle title="12. よくある質問" />
+      {/* 14. よくある質問 */}
+      <SectionTitle title="14. よくある質問" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(11)} className="w-full h-full">
+          <div ref={setSlideRef(13)} className="w-full h-full">
             <FAQ1 />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 13. よくある質問 - 利用方法 */}
-      <SectionTitle title="13. よくある質問 - 利用方法" />
+      {/* 15. よくある質問 - 利用方法 */}
+      <SectionTitle title="15. よくある質問 - 利用方法" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(12)} className="w-full h-full">
+          <div ref={setSlideRef(14)} className="w-full h-full">
             <FAQ2 />
           </div>
         </SlideContainer>
       </SlideRow>
 
-      {/* 14. よくある質問 - サポート・実績 */}
-      <SectionTitle title="14. よくある質問 - サポート・実績" />
+      {/* 16. よくある質問 - サポート・実績 */}
+      <SectionTitle title="16. よくある質問 - サポート・実績" />
       <SlideRow>
         <SlideContainer>
-          <div ref={setSlideRef(13)} className="w-full h-full">
+          <div ref={setSlideRef(15)} className="w-full h-full">
             <FAQ3 />
           </div>
         </SlideContainer>

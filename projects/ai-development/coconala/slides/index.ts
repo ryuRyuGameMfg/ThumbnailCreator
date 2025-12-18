@@ -1,5 +1,7 @@
 // AI Development Service v2 - Slides export
 export { Cover } from './Cover';
+export { Problem } from './Problem';
+export { Solution } from './Solution';
 export { Features } from './Features';
 export { Apps } from './Apps';
 export { VoiceChat } from './VoiceChat';
