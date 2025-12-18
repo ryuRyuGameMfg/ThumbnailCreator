@@ -1,28 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { FileText, Image, FolderOpen, Settings } from 'lucide-react';
+import { FileText, Image, FolderOpen, Download } from 'lucide-react';
+import { useState } from 'react';
 
 // プロジェクトデータ
 const projects = [
   {
     id: 'ai-development',
     name: 'AI開発サービス',
-    description: 'ココナラ・ランサーズ出品用サムネイル',
+    description: 'AI・Web開発サービスサムネイル',
     platforms: [
       {
-        href: '/coconala',
+        href: '/ai-development-coconala',
         title: 'ココナラ版',
-        description: '620×620px 正方形',
-        color: 'from-green-500 to-emerald-600',
-        iconBg: 'bg-green-500',
-      },
-      {
-        href: '/lancers',
-        title: 'ランサーズ版',
-        description: '1220×686px 16:9横長',
-        color: 'from-blue-500 to-indigo-600',
-        iconBg: 'bg-blue-500',
+        description: '620×620px 正方形 | 14スライド',
+        color: 'from-cyan-400 to-blue-600',
+        iconBg: 'bg-cyan-500',
       },
     ],
   },
@@ -32,16 +26,9 @@ const projects = [
     description: 'メタバース・VRワールド制作サムネイル',
     platforms: [
       {
-        href: '/cluster-coconala',
-        title: 'ココナラ版（オリジナル）',
+        href: '/cluster-development-coconala',
+        title: 'ココナラ版',
         description: '620×620px 正方形 | 9スライド',
-        color: 'from-sky-400 to-blue-500',
-        iconBg: 'bg-sky-500',
-      },
-      {
-        href: '/cluster-v2-coconala',
-        title: 'ココナラ版 v2 (新背景)',
-        description: '620×620px | サイバー背景',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
@@ -53,16 +40,9 @@ const projects = [
     description: '72時間質問し放題サービス',
     platforms: [
       {
-        href: '/unity-text-coconala',
-        title: 'ココナラ版（オリジナル）',
+        href: '/unity-text-support-coconala',
+        title: 'ココナラ版',
         description: '620×620px 正方形 | 9スライド',
-        color: 'from-orange-400 to-red-500',
-        iconBg: 'bg-orange-500',
-      },
-      {
-        href: '/unity-text-v2-coconala',
-        title: 'ココナラ版 v2 (新背景)',
-        description: '620×620px | サイバー背景',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
@@ -74,16 +54,9 @@ const projects = [
     description: '60分間画面共有サポート',
     platforms: [
       {
-        href: '/unity-video-coconala',
-        title: 'ココナラ版（オリジナル）',
+        href: '/unity-video-support-coconala',
+        title: 'ココナラ版',
         description: '620×620px 正方形 | 9スライド',
-        color: 'from-purple-400 to-pink-500',
-        iconBg: 'bg-purple-500',
-      },
-      {
-        href: '/unity-video-v2-coconala',
-        title: 'ココナラ版 v2 (新背景)',
-        description: '620×620px | サイバー背景',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
@@ -92,6 +65,15 @@ const projects = [
 ];
 
 export default function Home() {
+  const [downloadingUrl, setDownloadingUrl] = useState<string | null>(null);
+
+  const handleDownload = (href: string) => {
+    // URLに autoDownload パラメータを追加
+    const downloadUrl = `${href}?autoDownload=true`;
+    // 新しいタブでページを開いてダウンロードを開始
+    window.open(downloadUrl, '_blank');
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col items-center p-8">
       <div className="max-w-6xl w-full">
@@ -123,11 +105,7 @@ export default function Home() {
             {/* プラットフォーム一覧 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {project.platforms.map(({ href, title, description, color, iconBg }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="group"
-                >
+                <div key={href} className="group">
                   <div className="bg-slate-800/50 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 border border-slate-700 hover:border-slate-600 h-full">
                     <div className="flex items-center gap-4 mb-4">
                       <div className={`${iconBg} rounded-xl p-3 shadow-lg group-hover:scale-110 transition-transform`}>
@@ -138,11 +116,24 @@ export default function Home() {
                         <p className="text-sm text-slate-400">{description}</p>
                       </div>
                     </div>
-                    <div className={`bg-gradient-to-r ${color} rounded-lg p-3 text-white text-center font-bold group-hover:scale-105 transition-transform`}>
-                      開く →
+                    <div className="grid grid-cols-2 gap-2">
+                      <Link
+                        href={href}
+                        className={`bg-gradient-to-r ${color} rounded-lg p-3 text-white text-center font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2`}
+                      >
+                        <FileText className="w-4 h-4" />
+                        <span>開く</span>
+                      </Link>
+                      <button
+                        onClick={() => handleDownload(href)}
+                        className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg p-3 text-white text-center font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2"
+                      >
+                        <Download className="w-4 h-4" />
+                        <span>DL</span>
+                      </button>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>

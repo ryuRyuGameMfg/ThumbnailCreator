@@ -2,31 +2,17 @@
 
 import SlideWrapper from '../SlideWrapper';
 import { HelpCircle } from 'lucide-react';
+import { PinkTitleV2 } from '@/components/PinkTitleV2';
 
 // ========================================
-// FAQ1（基礎知識）
+// FAQ1（基礎知識）v2 - 見やすく改善
 // ========================================
-
-function SlideTitle({ english, japanese }: { english: string; japanese: string }) {
-  return (
-    <div className="text-center mb-3">
-      <h1 className="font-melete text-[36px] font-bold text-sky-600 tracking-wider">
-        {english}
-      </h1>
-      <p className="text-sm text-gray-500 font-hackgen">{japanese}</p>
-    </div>
-  );
-}
 
 export function FAQ1() {
   const faqs = [
     {
       question: 'Unityって何ですか？',
-      answer: 'ゲーム開発エンジンで、2D/3Dゲーム、VR/ARアプリなどを作成できます。',
-    },
-    {
-      question: 'Unityだけですか？',
-      answer: 'いいえ、最新AI開発、AIを活用したホームページ制作・リリース方法など、AI活用全般もサポートしています。',
+      answer: 'ゲーム開発エンジンで、2D/3Dゲーム、VR/ARアプリなどを作成できます。公式: https://unity.com/ja',
     },
     {
       question: '回答はどのくらいで来ますか？',
@@ -41,29 +27,23 @@ export function FAQ1() {
   return (
     <SlideWrapper slideNumber={7} slideName="faq1">
       <div className="flex flex-col h-full font-hackgen">
-        <SlideTitle english="FAQ" japanese="よくある質問 - 基礎知識" />
+        <PinkTitleV2 english="FAQ" japanese="よくある質問" />
         
-        <div className="flex-1 flex flex-col gap-2">
+        <div className="flex-1 flex flex-col gap-4">
           {faqs.map(({ question, answer }, index) => (
             <div
               key={index}
-              className="bg-gradient-to-r from-sky-50 to-blue-50 border-2 border-sky-200 rounded-lg p-2 shadow-sm"
+              className="bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/50 rounded-xl p-4 shadow-sm backdrop-blur"
             >
-              <div className="flex items-start gap-2 mb-0.5">
-                <div className="w-5 h-5 bg-sky-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <HelpCircle className="w-3 h-3 text-white" />
+              <div className="flex items-start gap-3 mb-2">
+                <div className="w-7 h-7 bg-sky-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <HelpCircle className="w-4 h-4 text-white" />
                 </div>
-                <h3 className="text-sky-700 font-bold text-xs flex-1">{question}</h3>
+                <h3 className="text-white font-bold text-base flex-1">{question}</h3>
               </div>
-              <p className="text-gray-600 text-[10px] leading-relaxed pl-7">{answer}</p>
+              <p className="text-white/90 text-sm leading-relaxed pl-10">{answer}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-2 text-center">
-          <p className="text-[10px] text-gray-500">
-            Unity公式サイト: https://unity.com/ja
-          </p>
         </div>
       </div>
     </SlideWrapper>

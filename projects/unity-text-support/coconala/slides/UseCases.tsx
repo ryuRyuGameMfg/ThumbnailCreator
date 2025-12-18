@@ -2,52 +2,40 @@
 
 import SlideWrapper from '../SlideWrapper';
 import { Book, Bug, Code, Sparkles } from 'lucide-react';
+import { PinkTitleV2 } from '@/components/PinkTitleV2';
 
 // ========================================
-// UseCases（サポート範囲）
+// UseCases（サポート範囲）v2
 // ========================================
-
-function SlideTitle({ english, japanese }: { english: string; japanese: string }) {
-  return (
-    <div className="text-center mb-4">
-      <h1 className="font-melete text-[36px] font-bold text-sky-600 tracking-wider">
-        {english}
-      </h1>
-      <p className="text-sm text-gray-500 font-hackgen">{japanese}</p>
-    </div>
-  );
-}
-
-import { USECASES_COLORS } from '@/constants/COLORS';
 
 export function UseCases() {
   const useCases = [
     {
-      icon: <Book className="w-8 h-8 text-white" />,
+      icon: <Book className="w-10 h-10 text-white" />,
       title: 'Unityの基本操作',
-      gradient: USECASES_COLORS[0],
+      gradient: 'from-sky-500 to-sky-600',
     },
     {
-      icon: <Bug className="w-8 h-8 text-white" />,
+      icon: <Bug className="w-10 h-10 text-white" />,
       title: 'バグやエラー解決',
-      gradient: USECASES_COLORS[1],
+      gradient: 'from-sky-600 to-blue-600',
     },
     {
-      icon: <Code className="w-8 h-8 text-white" />,
-      title: '開発アドバイス',
-      gradient: USECASES_COLORS[2],
+      icon: <Code className="w-10 h-10 text-white" />,
+      title: 'ゲーム開発全般',
+      gradient: 'from-sky-500 to-blue-600',
     },
     {
-      icon: <Sparkles className="w-8 h-8 text-white" />,
-      title: 'AI開発・Web制作',
-      gradient: USECASES_COLORS[3],
+      icon: <Sparkles className="w-10 h-10 text-white" />,
+      title: 'AI・Web も対応可',
+      gradient: 'from-blue-600 to-indigo-600',
     },
   ];
 
   return (
     <SlideWrapper slideNumber={2} slideName="usecases">
       <div className="flex flex-col h-full font-hackgen">
-        <SlideTitle english="SUPPORT" japanese="サポート範囲" />
+        <PinkTitleV2 english="SUPPORT" japanese="サポート範囲" />
         
         <div className="flex-1 grid grid-cols-2 gap-4">
           {useCases.map(({ icon, title, gradient }, index) => (
@@ -58,7 +46,7 @@ export function UseCases() {
               <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-3">
                 {icon}
               </div>
-              <h3 className="text-white font-bold text-base text-center">{title}</h3>
+              <h3 className="text-white font-bold text-lg text-center">{title}</h3>
             </div>
           ))}
         </div>

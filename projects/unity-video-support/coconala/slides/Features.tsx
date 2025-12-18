@@ -2,62 +2,50 @@
 
 import SlideWrapper from '../SlideWrapper';
 import { Monitor, BookOpen, Layers, MessageSquare, Clock } from 'lucide-react';
+import { PinkTitleV2 } from '@/components/PinkTitleV2';
 
 // ========================================
-// Features（5つの特徴）
+// Features（5つの特徴）v2 - セーフエリア調整
 // ========================================
-
-function SlideTitle({ english, japanese }: { english: string; japanese: string }) {
-  return (
-    <div className="text-center mb-3">
-      <h1 className="font-melete text-[36px] font-bold text-sky-600 tracking-wider">
-        {english}
-      </h1>
-      <p className="text-sm text-gray-500 font-hackgen">{japanese}</p>
-    </div>
-  );
-}
-
-import { FEATURES_COLORS, DELIVERABLES_COLORS } from '@/constants/COLORS';
 
 export function Features() {
   const features = [
     {
-      icon: <Monitor className="w-6 h-6 text-white" />,
+      icon: <Monitor className="w-7 h-7 text-white" />,
       title: '画面共有で即時解決',
       description: 'リアルタイム解析',
-      gradient: FEATURES_COLORS[0],
+      gradient: 'from-sky-500 to-sky-600',
     },
     {
-      icon: <BookOpen className="w-6 h-6 text-white" />,
+      icon: <BookOpen className="w-7 h-7 text-white" />,
       title: '初心者向け解説',
       description: 'かみ砕いて説明',
-      gradient: FEATURES_COLORS[1],
+      gradient: 'from-sky-600 to-blue-600',
     },
     {
-      icon: <Layers className="w-6 h-6 text-white" />,
+      icon: <Layers className="w-7 h-7 text-white" />,
       title: '幅広い技術領域',
       description: '2D/3D・VR・AI対応',
-      gradient: FEATURES_COLORS[2],
+      gradient: 'from-sky-500 to-blue-600',
     },
     {
-      icon: <MessageSquare className="w-6 h-6 text-white" />,
+      icon: <MessageSquare className="w-7 h-7 text-white" />,
       title: 'ヒアリング重視',
       description: '60分をフル活用',
-      gradient: FEATURES_COLORS[3],
+      gradient: 'from-blue-600 to-indigo-600',
     },
     {
-      icon: <Clock className="w-6 h-6 text-white" />,
+      icon: <Clock className="w-7 h-7 text-white" />,
       title: '柔軟な対応',
       description: 'DM返信保証',
-      gradient: DELIVERABLES_COLORS[4], // 5項目目はDeliverablesの色を使用
+      gradient: 'from-sky-600 to-blue-600',
     },
   ];
 
   return (
     <SlideWrapper slideNumber={1} slideName="features">
       <div className="flex flex-col h-full font-hackgen">
-        <SlideTitle english="FEATURES" japanese="5つのサービスの特徴" />
+        <PinkTitleV2 english="FEATURES" japanese="5つのサービスの特徴" />
         
         <div className="flex-1 flex flex-col gap-2">
           {features.slice(0, 3).map(({ icon, title, description, gradient }, index) => (
@@ -78,9 +66,9 @@ export function Features() {
             {features.slice(3).map(({ icon, title, description, gradient }, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-br ${gradient} rounded-xl p-2 flex flex-col items-center justify-center shadow-lg`}
+                className={`bg-gradient-to-br ${gradient} rounded-xl p-2.5 flex flex-col items-center justify-center shadow-lg`}
               >
-                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-1">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-1.5">
                   {icon}
                 </div>
                 <h3 className="text-white font-bold text-xs text-center mb-0.5">{title}</h3>

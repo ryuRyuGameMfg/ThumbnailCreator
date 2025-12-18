@@ -10,7 +10,7 @@ function Character120() {
   return (
     <div className="absolute bottom-0 right-0 w-[336px] h-[480px] flex items-end justify-center z-10">
       <Image
-        src="/character-1-transparent.png"
+        src="/images/character-1-transparent.png"
         alt="AI Character"
         width={336}
         height={672}
@@ -31,7 +31,7 @@ function Character120Left() {
   return (
     <div className="absolute bottom-0 left-0 w-[336px] h-[480px] flex items-end justify-center z-10">
       <Image
-        src="/character-1-transparent.png"
+        src="/images/character-1-transparent.png"
         alt="AI Character"
         width={336}
         height={672}

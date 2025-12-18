@@ -2,84 +2,61 @@
 
 import SlideWrapper from '../SlideWrapper';
 import { MessageCircle, ShoppingCart, MessageSquare, CheckCircle } from 'lucide-react';
+import { PinkTitleV2 } from '@/components/PinkTitleV2';
+import { StepCard } from '@/components/common';
+import { FLOW_COLORS } from '@/constants/COLORS';
+import { FONT_SIZES, TEXT_COLORS, FONTS, SPACING } from '@/constants/STYLES';
 
 // ========================================
-// Flow（サービスの流れ）
+// Flow（サービスの流れ）v2
+// レギュレーション準拠版
 // ========================================
-
-function SlideTitle({ english, japanese }: { english: string; japanese: string }) {
-  return (
-    <div className="text-center mb-4">
-      <h1 className="font-melete text-[36px] font-bold text-sky-600 tracking-wider">
-        {english}
-      </h1>
-      <p className="text-sm text-gray-500 font-hackgen">{japanese}</p>
-    </div>
-  );
-}
 
 export function Flow() {
   const steps = [
     {
       number: '1',
-      icon: <MessageCircle className="w-5 h-5 text-white" />,
+      icon: <MessageCircle className="w-6 h-6 text-white" />,
       title: '無料相談',
-      duration: '見積もり相談',
-      gradient: 'from-sky-500 to-sky-500',
+      description: '見積もり相談',
+      gradient: FLOW_COLORS[0],
     },
     {
       number: '2',
-      icon: <ShoppingCart className="w-5 h-5 text-white" />,
+      icon: <ShoppingCart className="w-6 h-6 text-white" />,
       title: 'ご購入',
-      duration: '手続き完了',
-      gradient: 'from-blue-500 to-blue-500',
+      description: '手続き完了',
+      gradient: FLOW_COLORS[1],
     },
     {
       number: '3',
-      icon: <MessageSquare className="w-5 h-5 text-white" />,
+      icon: <MessageSquare className="w-6 h-6 text-white" />,
       title: '開始',
-      duration: '72時間サポート',
-      gradient: 'from-indigo-500 to-indigo-500',
+      description: '72時間サポート',
+      gradient: FLOW_COLORS[2],
     },
     {
       number: '4',
-      icon: <CheckCircle className="w-5 h-5 text-white" />,
+      icon: <CheckCircle className="w-6 h-6 text-white" />,
       title: '完了',
-      duration: 'レビュー後終了',
-      gradient: 'from-violet-500 to-violet-500',
+      description: 'レビュー後終了',
+      gradient: FLOW_COLORS[3],
     },
   ];
 
   return (
     <SlideWrapper slideNumber={6} slideName="flow">
-      <div className="flex flex-col h-full font-hackgen">
-        <SlideTitle english="FLOW" japanese="サービスの流れ" />
+      <div className={`flex flex-col h-full ${FONTS.JAPANESE}`}>
+        <PinkTitleV2 english="FLOW" japanese="サービスの流れ" />
         
-        <div className="flex-1 grid grid-cols-2 gap-3">
-          {steps.map(({ number, icon, title, duration, gradient }, index) => (
-            <div
-              key={index}
-              className={`bg-gradient-to-br ${gradient} rounded-xl p-4 flex flex-col justify-between shadow-lg relative overflow-hidden`}
-            >
-              {/* 背景の大きな数字 */}
-              <div className="absolute top-0 right-2 text-white/10 font-black text-6xl leading-none">
-                {number}
-              </div>
-              
-              {/* コンテンツ */}
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-2">
-                  {icon}
-                </div>
-                <h3 className="text-white font-bold text-sm mb-1 leading-tight">{title}</h3>
-                <p className="text-white/90 text-xs">{duration}</p>
-              </div>
-            </div>
+        <div className={`flex-1 grid grid-cols-2 ${SPACING.CONTENT_GAP_LARGE}`}>
+          {steps.map((step, index) => (
+            <StepCard key={index} {...step} />
           ))}
         </div>
 
-        <div className="mt-3 text-center">
-          <p className="text-xs text-gray-500">
+        <div className={`${SPACING.SECTION_MARGIN_TOP} text-center`}>
+          <p className={`${FONT_SIZES.BODY_SMALL} ${TEXT_COLORS.WHITE}`}>
             ご不安な方は無料相談からOK
           </p>
         </div>
@@ -87,4 +64,3 @@ export function Flow() {
     </SlideWrapper>
   );
 }
-

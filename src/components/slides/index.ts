@@ -1,5 +1,4 @@
-// ココナラ版（正方形620x620）
-export * from './compare';
-
-// ランサーズ版（横長1220x686）
-export * from './lancers';
+// 共通スライドコンポーネント
+export { default as SlideWrapper } from './SlideWrapper';
+export { default as SlideWrapperLancers } from './SlideWrapperLancers';
+export * from './cover';

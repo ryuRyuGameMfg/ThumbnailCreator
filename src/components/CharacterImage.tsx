@@ -13,7 +13,7 @@ interface CharacterImageProps {
  * 緑背景（クロマキー）を除去して表示
  * 
  * 使用方法:
- * <CharacterImage src="/character-1.png" className="absolute bottom-0 right-0" />
+ * <CharacterImage src="/images/character-1.png" className="absolute bottom-0 right-0" />
  */
 export function CharacterImage({ 
   src, 

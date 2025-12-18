@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-http://localhost:3000 でアプリケーションが起動します。
+http://localhost:4004 でアプリケーションが起動します。
 
 ## プロジェクト構造
 
@@ -30,7 +30,7 @@ http://localhost:3000 でアプリケーションが起動します。
 
 ## 技術スタック
 
-- Next.js 15 + TypeScript
+- Next.js 16 + TypeScript
 - Tailwind CSS
 - html-to-image (画像生成)
 - JSZip (一括ダウンロード)

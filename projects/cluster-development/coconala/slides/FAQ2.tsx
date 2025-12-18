@@ -2,21 +2,7 @@
 
 import SlideWrapper from '../SlideWrapper';
 import { HelpCircle } from 'lucide-react';
-
-// ========================================
-// FAQ2（制作・納品）
-// ========================================
-
-function SlideTitle({ english, japanese }: { english: string; japanese: string }) {
-  return (
-    <div className="text-center mb-3">
-      <h1 className="font-melete text-[36px] font-bold text-sky-600 tracking-wider">
-        {english}
-      </h1>
-      <p className="text-sm text-gray-500 font-hackgen">{japanese}</p>
-    </div>
-  );
-}
+import { PinkTitleV2 } from '@/components/PinkTitleV2';
 
 export function FAQ2() {
   const faqs = [
@@ -29,10 +15,6 @@ export function FAQ2() {
       answer: 'はい、キャラクターや素材を渡すだけでOKです。ヒアリングシートで的確にご要望をキャッチします。',
     },
     {
-      question: '素材はどうすればいいですか？',
-      answer: 'お客様ご指定の素材を使用することも、当方でご用意することも可能です。お気軽にご相談ください。',
-    },
-    {
       question: '納品はどれぐらいでできますか？',
       answer: '基本12日以内に納品いたします。お急ぎの場合はご相談ください。',
     },
@@ -41,29 +23,23 @@ export function FAQ2() {
   return (
     <SlideWrapper slideNumber={8} slideName="faq2">
       <div className="flex flex-col h-full font-hackgen">
-        <SlideTitle english="FAQ" japanese="よくある質問 - 制作・納品" />
+        <PinkTitleV2 english="FAQ" japanese="よくある質問 - 制作・納品" />
         
-        <div className="flex-1 flex flex-col gap-2">
+        <div className="flex-1 flex flex-col gap-3.5">
           {faqs.map(({ question, answer }, index) => (
             <div
               key={index}
-              className="bg-gradient-to-r from-sky-50 to-blue-50 border-2 border-sky-200 rounded-lg p-2 shadow-sm"
+              className="bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/50 rounded-xl p-3.5 shadow-sm backdrop-blur"
             >
-              <div className="flex items-start gap-2 mb-0.5">
-                <div className="w-5 h-5 bg-sky-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <HelpCircle className="w-3 h-3 text-white" />
+              <div className="flex items-start gap-2.5 mb-1.5">
+                <div className="w-6 h-6 bg-sky-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <HelpCircle className="w-3.5 h-3.5 text-white" />
                 </div>
-                <h3 className="text-sky-700 font-bold text-xs flex-1">{question}</h3>
+                <h3 className="text-white font-bold text-sm flex-1">{question}</h3>
               </div>
-              <p className="text-gray-600 text-[10px] leading-relaxed pl-7">{answer}</p>
+              <p className="text-white/90 text-xs leading-relaxed pl-9">{answer}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-2 text-center">
-          <p className="text-[10px] text-gray-500">
-            その他のご質問はDMでお気軽にご連絡ください
-          </p>
         </div>
       </div>
     </SlideWrapper>
