@@ -24,13 +24,6 @@ const projects = [
         color: 'from-blue-500 to-indigo-600',
         iconBg: 'bg-blue-500',
       },
-      {
-        href: '/cover',
-        title: 'サムネイル画像',
-        description: '表紙デザイン・18バリエーション',
-        color: 'from-purple-500 to-pink-600',
-        iconBg: 'bg-purple-500',
-      },
     ],
   },
   {
@@ -54,10 +47,17 @@ const projects = [
     platforms: [
       {
         href: '/unity-text-coconala',
-        title: 'ココナラ版',
+        title: 'ココナラ版（オリジナル）',
         description: '620×620px 正方形 | 9スライド',
         color: 'from-orange-400 to-red-500',
         iconBg: 'bg-orange-500',
+      },
+      {
+        href: '/unity-text-v2-coconala',
+        title: 'ココナラ版 v2 (新背景)',
+        description: '620×620px | サイバー背景',
+        color: 'from-cyan-400 to-blue-600',
+        iconBg: 'bg-cyan-500',
       },
     ],
   },
@@ -68,10 +68,17 @@ const projects = [
     platforms: [
       {
         href: '/unity-video-coconala',
-        title: 'ココナラ版',
+        title: 'ココナラ版（オリジナル）',
         description: '620×620px 正方形 | 9スライド',
         color: 'from-purple-400 to-pink-500',
         iconBg: 'bg-purple-500',
+      },
+      {
+        href: '/unity-video-v2-coconala',
+        title: 'ココナラ版 v2 (新背景)',
+        description: '620×620px | サイバー背景',
+        color: 'from-cyan-400 to-blue-600',
+        iconBg: 'bg-cyan-500',
       },
     ],
   },
