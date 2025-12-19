@@ -270,14 +270,14 @@ body {
    スライド固定サイズ
    ======================================== */
 
-/* ココナラ版スライド（620x620px 正方形） */
+/* ココナラ版スライド（1220x1240px 公式推奨サイズ） */
 .slide-container {
-  width: 620px;
-  height: 620px;
-  min-width: 620px;
-  min-height: 620px;
-  max-width: 620px;
-  max-height: 620px;
+  width: 1220px;
+  height: 1240px;
+  min-width: 1220px;
+  min-height: 1240px;
+  max-width: 1220px;
+  max-height: 1240px;
 }
 
 /* Cover表紙用（500x508px 縦長 - ココナラ推奨比率1220:1240をスケールダウン） */

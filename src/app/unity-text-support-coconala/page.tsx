@@ -2,7 +2,8 @@
 
 import { useRef, useCallback, useState, createContext, useContext, useEffect } from 'react';
 import { toPng } from 'html-to-image';
-import { Download, Loader2, Eye, EyeOff } from 'lucide-react';
+import { Download, Loader2, Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 import JSZip from 'jszip';
 import {
   Problem,
@@ -19,9 +20,9 @@ import {
 } from '@projects/unity-text-support/coconala/slides';
 import { SAFE_AREA_TOP, SAFE_AREA_BOTTOM } from '@projects/unity-text-support/coconala/SlideWrapper';
 
-// ========== ココナラ版（620x620px 正方形） ==========
-const SLIDE_WIDTH = 620;
-const SLIDE_HEIGHT = 620;
+// ========== ココナラ版（1220x1240px 公式推奨サイズ） ==========
+const SLIDE_WIDTH = 1220;
+const SLIDE_HEIGHT = 1240;
 
 // セーフエリア表示コンテキスト
 const SafeAreaContext = createContext(false);
@@ -162,12 +163,20 @@ export default function UnityTextSupportCoconalaPage() {
         {/* ヘッダー */}
         <div className="bg-white border-b border-gray-200 py-4 px-8 sticky top-0 z-50">
           <div className="max-w-[2400px] mx-auto flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-black text-gray-900">Unityテキストサポート - ココナラ版</h1>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/"
+                className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5 text-gray-600" />
+              </Link>
+              <div>
+                <h1 className="text-2xl font-black text-gray-900">Unityテキストサポート - ココナラ版</h1>
               <p className="text-gray-500 text-sm mt-1">
                 全11スライド | {SLIDE_WIDTH}×{SLIDE_HEIGHT}px（正方形）|
                 セーフエリア: 上下{SAFE_AREA_TOP}px切れる
               </p>
+              </div>
             </div>
             <div className="flex items-center gap-3">
               <button

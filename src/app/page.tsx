@@ -13,7 +13,7 @@ const projects = [
       {
         href: '/ai-development-coconala',
         title: 'ココナラ版',
-        description: '620×620px 正方形 | 14スライド',
+        description: '1220×1240px | 14スライド',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
@@ -27,7 +27,7 @@ const projects = [
       {
         href: '/cluster-development-coconala',
         title: 'ココナラ版',
-        description: '620×620px 正方形 | 9スライド',
+        description: '1220×1240px | 9スライド',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
@@ -41,7 +41,7 @@ const projects = [
       {
         href: '/unity-text-support-coconala',
         title: 'ココナラ版',
-        description: '620×620px 正方形 | 9スライド',
+        description: '1220×1240px | 9スライド',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
@@ -55,7 +55,7 @@ const projects = [
       {
         href: '/unity-video-support-coconala',
         title: 'ココナラ版',
-        description: '620×620px 正方形 | 9スライド',
+        description: '1220×1240px | 9スライド',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
@@ -69,7 +69,7 @@ const projects = [
       {
         href: '/thumbnail-service-coconala',
         title: 'ココナラ版',
-        description: '620×620px 正方形 | 10スライド',
+        description: '1220×1240px | 10スライド',
         color: 'from-cyan-400 to-blue-600',
         iconBg: 'bg-cyan-500',
       },
